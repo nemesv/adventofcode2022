@@ -6,13 +6,33 @@ public class Day01 : Day
     {
     }
 
+    private List<int> GetCalories()
+    {
+        var lines = input.Split(Environment.NewLine);
+        var current = 0;
+        var result = new List<int>();
+        foreach (var line in lines)
+        {
+            if (string.IsNullOrWhiteSpace(line))
+            {
+                result.Add(current);
+                current = 0;
+                continue;
+            }
+            current += int.Parse(line);            
+        }
+        if (current > 0)
+            result.Add(current);
+        return result;
+    }
+
     public override string Part1()
     {
-        throw new System.NotImplementedException();
-    }
+        return GetCalories().OrderByDescending(c => c).First().ToString();
+    }    
 
     public override string Part2()
     {
-        throw new System.NotImplementedException();
+        return GetCalories().OrderByDescending(c => c).Take(3).Sum().ToString();
     }
 }
