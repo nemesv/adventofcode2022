@@ -8,11 +8,25 @@ public class Day06 : Day
 
     public override string Part1()
     {
-        throw new System.NotImplementedException();
+        return FindIndex(4).ToString();
     }
 
     public override string Part2()
     {
-        throw new System.NotImplementedException();
+        return FindIndex(14).ToString();
+    }
+
+    int FindIndex(int length)
+    {
+        var index = 0;
+        for (; index < input.Length - length; index++)
+        {
+            var current = input.Substring(index, length);
+            var set = new HashSet<char>(current);
+            if (set.Count == length)
+                break;
+        }
+
+        return (index + length);
     }
 }
