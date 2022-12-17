@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-var dayNumber = DateTime.Now.Day;
+var dayNumber = DateTime.Now.AddDays(-1).Day;
 if (args.Length > 0)
 {
     dayNumber = int.Parse(args[0]);
