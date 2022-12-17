@@ -3,7 +3,7 @@
 public class Day17Tests : DayTest<Day17>
 {
     [Theory]
-    [InlineData("input", "expected")]
+    [InlineData(">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>", "3068")]
     public void Part1(string input, string output)
     {
         var result = Sut(input.Replace(",", "\r\n")).Part1();
@@ -11,7 +11,7 @@ public class Day17Tests : DayTest<Day17>
     }
 
     [Theory]
-    [InlineData("input", "expected")]
+    [InlineData(">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>", "1514285714288")]
     public void Part2(string input, string output)
     {
         var result = Sut(input.Replace(",", "\r\n")).Part2();
